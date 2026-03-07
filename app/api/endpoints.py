@@ -18,7 +18,6 @@ async def health_check():
     return {"status": "healthy", "service": "speech-translation-service"}
 
 @router.post("/speech-to-text")
-@router.post("/transcribe")
 async def transcribe_voice(
     file: UploadFile = File(..., description="The audio file to transcribe (WebM, WAV, OGG supported)"),
     lang: str = Form("en", description="Language code of the speaker: 'en', 'hi', 'te'"),

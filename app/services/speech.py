@@ -40,7 +40,7 @@ class SpeechService:
             dict: { "native_text": "...", "english_text": "..." }
         """
         if chat_id:
-            print(f"Processing speech ({lang}) for chat session: {chat_id} (LLM: {use_llm})")
+            logger.info(f"Processing speech ({lang}) for chat session: {chat_id} (LLM: {use_llm})")
             
         # Get full recognition language code
         recognition_lang = self.lang_map.get(lang, 'en-US')
